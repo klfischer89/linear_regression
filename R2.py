@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 from sklearn.metrics import r2_score    
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 df = pd.read_csv("./data/diamonds.csv.bz2")
 
@@ -14,7 +15,18 @@ model.fit(xs, ys)
 
 print(model.score(xs, ys))
 
-from sklearn.metrics import r2_score
-
 y_pred = model.predict(xs)
 print(r2_score(ys, y_pred))
+
+xs = df[["carat", "x"]]
+ys = df["price"]
+
+model = LinearRegression()
+model.fit(xs, ys)
+
+# print(model.coef_)
+# print(model.intercept_)
+
+print(model.score(xs, ys))
+
+print(model.predict([[5, 4]]))
