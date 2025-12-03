@@ -3,7 +3,6 @@ import pandas as pd
 import seaborn as sns
 from sklearn.metrics import r2_score    
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
 
 df = pd.read_csv("./data/diamonds.csv.bz2")
 
